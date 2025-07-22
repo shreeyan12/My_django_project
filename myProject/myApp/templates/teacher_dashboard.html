@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-primary">Welcome, {{ request.user.teacher.full_name }}</h2>
+    <p class="text-muted">Choose an action below:</p>
+
+    <a href="{% url 'add_result' %}" class="btn btn-success mb-2"> Add Result</a>
+    <a href="{% url 'view_results' %}" class="btn btn-info mb-2"> View Results</a>
+</div>
+{% endblock %}

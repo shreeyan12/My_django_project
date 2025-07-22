@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Register Page</h2>
+  <form method="post">
+    {% csrf_token %}
+    <!-- Add form fields here -->
+  </form>
+{% endblock %}
+<h1>Welcome to the registration page</h1>

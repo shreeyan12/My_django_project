@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Welcome, {{ student.full_name }} 🎓</h2>
+    <p>Roll No: {{ student.roll_number }}</p>
+    <p class="text-success">"Keep learning, keep growing!"</p>
+
+    <form method="post" class="mt-4">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">View Result</button>
+    </form>
+
+    {% if result_data %}
+        <hr>
+        <h4 class="mt-4">Your Result:</h4>
+        <table class="table table-bordered mt-2">
+            <thead class="thead-light">
+                <tr>
+                    <th>Course</th>
+                    <th>Student Name</th>
+                    <th>Marks Obtained</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ result_data.course.name }}</td>
+                    <td>{{ result_data.student.full_name }}</td>
+                    <td>{{ result_data.marks_obtained }}</td>
+                </tr>
+            </tbody>
+        </table>
+    {% endif %}
+</div>
+{% endblock %}

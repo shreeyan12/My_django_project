@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-primary">All Added Results</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Course</th>
+                <th>Marks</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+            <tr>
+                <td>{{ result.student.full_name }}</td>
+                <td>{{ result.course.name }}</td>
+                <td>{{ result.marks_obtained }}</td>
+                <td>
+                    <a href="{% url 'edit_result' result.id %}" class="btn btn-warning btn-sm">Edit</a>
+                    <a href="{% url 'delete_result' result.id %}" class="btn btn-danger btn-sm">Delete</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr><td colspan="4">No results found.</td></tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

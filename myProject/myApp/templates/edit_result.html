@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-primary">Edit Result</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Update Result</button>
+        <a href="{% url 'view_results' %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}

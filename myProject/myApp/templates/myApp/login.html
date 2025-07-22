@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h2>Login Page</h2>
+<form method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Username" required class="form-control my-2">
+    <input type="password" name="password" placeholder="Password" required class="form-control my-2">
+    <button type="submit" class="btn btn-primary">Login</button>
+    {% if messages %}
+  {% for message in messages %}
+    <div class="alert alert-danger">
+      {{ message }}
+    </div>
+  {% endfor %}
+{% endif %}
+</form>
+{% endblock %}
