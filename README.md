@@ -12,7 +12,7 @@ A web-based application built using **Django (Python)** to manage and publish co
 - 📝 Result Entry and Update (by teachers)
 - 📊 Result Viewing and Search (by students)
 - 📑 Admin Dashboard for Full Control
-- 📂 PDF Export (Optional/If Implemented)
+
 
 ---
 
